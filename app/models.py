@@ -106,6 +106,9 @@ class Pessoas(models.Model):
         help_text="Selecione a ocupação"
     )
 
+    class Meta:
+        verbose_name = "Pessoa"
+        verbose_name_plural = "Pessoas"
 
     def __str__(self):
         return self.nome
@@ -135,6 +138,9 @@ class Instituicao(models.Model):
         verbose_name="Cidade",
         help_text="Selecione a cidade"
     )
+    class Meta:
+        verbose_name = "Instituição"
+        verbose_name_plural = "Instituições"
 
     def __str__(self):
         return self.nome
@@ -146,6 +152,9 @@ class Area_Saber(models.Model):
         verbose_name="Áreas do Saber",
         help_text="Informe a área do saber:"
     )
+    class Meta:
+        verbose_name = "Área do saber"
+        verbose_name_plural = "Áreas do saber"
 
     def __str__(self):
         return self.nome
@@ -188,6 +197,10 @@ class Turnos(models.Model):
         help_text="Informe o turno:"
     )
 
+    class Meta:
+        verbose_name = "Turno"
+        verbose_name_plural = "Turnos"
+
     def __str__(self):
         return self.nome
     
@@ -206,6 +219,9 @@ class Disciplinas(models.Model):
         verbose_name="Instituição",
         help_text="Selecione a instituição"
     )
+    class Meta:
+        verbose_name = "Disciplina"
+        verbose_name_plural = "Disciplinas"
 
     def __str__(self):
         return self.nome
@@ -251,6 +267,10 @@ class Matriculas(models.Model):
         verbose_name="Usuário",
         help_text="Selecione o usuário"
     )
+
+    class Meta:
+        verbose_name = "Matrícula"
+        verbose_name_plural = "Matrículas"
 
     def __str__(self):
         return self.nome
@@ -328,6 +348,10 @@ class Frequencia(models.Model):
         help_text="Selecione o usuário"
     )
 
+    class Meta:
+        verbose_name = "Frequência"
+        verbose_name_plural = "Frequências"
+
     def __str__(self):
         return self.nome
 
@@ -389,10 +413,11 @@ class Ocorrencia(models.Model):
         verbose_name="Pessoa",
         help_text="Selecione a pessoa relacionada à ocorrência",
     )
-
-
+    class Meta:
+        verbose_name = "Ocorrência"
+        verbose_name_plural = "Ocorrências"
     def __str__(self):
-        return f"{self.descricao[:50]} ({self.curso.nome})"
+        return self.nome
 
 
 class DisciplinaPorCurso(models.Model):
@@ -419,9 +444,5 @@ class DisciplinaPorCurso(models.Model):
         help_text="Informe a carga horária em horas",
     )
 
-    class Meta:
-        verbose_name = "Disciplina por Curso"
-        verbose_name_plural = "Disciplinas por curso"
-
     def __str__(self):
-        return f"{self.curso.nome} - {self.disciplina.nome} ({self.turno.nome})"
+        return self.nome

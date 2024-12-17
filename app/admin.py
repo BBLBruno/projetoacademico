@@ -103,6 +103,11 @@ class DisciplinaPorCursoAdmin(admin.ModelAdmin):
     search_fields = ("curso", "disciplina")
     ordering = ("curso", "disciplina")
 
+class Area_SaberAdmin(admin.ModelAdmin):
+    list_display = ("nome",)
+    search_fields = ("nome",)
+    ordering = ("nome",)
+
 
 # Registrar as classes no ambiente administrativo
 admin.site.register(UF, UFAdmin)
@@ -117,3 +122,4 @@ admin.site.register(Matriculas, MatriculasAdmin)
 admin.site.register(Frequencia, FrequenciaAdmin)
 admin.site.register(Ocorrencia, OcorrenciaAdmin)
 admin.site.register(DisciplinaPorCurso, DisciplinaPorCursoAdmin)
+admin.site.register(Area_Saber, Area_SaberAdmin)
