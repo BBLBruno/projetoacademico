@@ -72,10 +72,10 @@ class DisciplinaAdmin(admin.ModelAdmin):
 
 
 class MatriculasAdmin(admin.ModelAdmin):
-    list_display = ("matricula", "data_inicio", "data_previsao_termino", "instituicao", "curso", "pessoas")
+    list_display = ("nome", "data_inicio", "data_previsao_termino", "instituicao", "curso", "pessoas")
     list_filter = ("instituicao", "curso", "pessoas")
-    search_fields = ("matricula", "instituicao", "curso", "pessoas")
-    ordering = ("matricula",)
+    search_fields = ("nome", "instituicao", "curso", "pessoas")
+    ordering = ("nome",)
 
 class AvaliacaoAdmin(admin.ModelAdmin):
     list_display = ("descricao", "nota", "disciplina", "curso", "tipoavaliacao")
@@ -84,24 +84,18 @@ class AvaliacaoAdmin(admin.ModelAdmin):
     ordering = ("descricao",)
 
 class FrequenciaAdmin(admin.ModelAdmin):
-    list_display = ("numero_faltas", "disciplina", "curso", "pessoas")
+    list_display = ("nome", "disciplina", "curso", "pessoas")
     list_filter = ("disciplina", "curso", "pessoas")
     search_fields = ("disciplina",)
     ordering = ("disciplina",)
 
 
 class OcorrenciaAdmin(admin.ModelAdmin):
-    list_display = ("descricao", "data", "curso", "disciplina", "pessoa")
+    list_display = ("nome", "data", "curso", "disciplina", "pessoa")
     list_filter = ("curso", "disciplina", "pessoa")
-    search_fields = ("descricao",)
+    search_fields = ("nome",)
     ordering = ("data",)
 
-
-class DisciplinaPorCursoAdmin(admin.ModelAdmin):
-    list_display = ("curso", "disciplina", "turno", "carga_horaria")
-    list_filter = ("curso", "disciplina", "turno")
-    search_fields = ("curso", "disciplina")
-    ordering = ("curso", "disciplina")
 
 class Area_SaberAdmin(admin.ModelAdmin):
     list_display = ("nome",)
@@ -121,5 +115,4 @@ admin.site.register(Disciplinas, DisciplinaAdmin)
 admin.site.register(Matriculas, MatriculasAdmin)
 admin.site.register(Frequencia, FrequenciaAdmin)
 admin.site.register(Ocorrencia, OcorrenciaAdmin)
-admin.site.register(DisciplinaPorCurso, DisciplinaPorCursoAdmin)
 admin.site.register(Area_Saber, Area_SaberAdmin)

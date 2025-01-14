@@ -228,7 +228,7 @@ class Disciplinas(models.Model):
 
 # Classe 'Matrículas'
 class Matriculas(models.Model):
-    matricula = models.CharField(
+    nome = models.CharField(
         max_length=255, 
         verbose_name="Matrícula",
         help_text="Informe a matrícula:"
@@ -318,7 +318,7 @@ class Avaliacao(models.Model):
 
 # Classe 'Frequência'
 class Frequencia(models.Model):
-    numero_faltas = models.CharField(
+    nome = models.CharField(
         max_length=255, 
         verbose_name="Faltas",
         help_text="Informe as faltas:"
@@ -387,7 +387,7 @@ class tipoavaliacao(models.Model):
 
 # Classe 'Ocorrência'
 class Ocorrencia(models.Model):
-    descricao = models.TextField(
+    nome = models.TextField(
         verbose_name="Descrição",
         help_text="Descreva a ocorrência",
     )

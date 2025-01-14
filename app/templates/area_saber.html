@@ -46,9 +46,6 @@
               <a class="nav-link text-dark" href="/frequencia/">Frequências</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link text-dark" href="/turma/">Turmas</a>
-          </li>
-          <li class="nav-item">
               <a class="nav-link text-dark" href="/ocorrencia/">Ocorrências</a>
           </li>
           </ul>
@@ -56,19 +53,17 @@
       </nav>
 
   <div class="container mt-5">
-    <h2 class="mb-4">Tabela de Cidades</h2>
+    <h2 class="mb-4">Tabela de Áreas do Saber</h2>
     <table class="table">
        <thead>
           <tr>
              <th scope="col">Nome</th>
-             <th scope="col">UF</th>
           </tr>
        </thead>
        <tbody>
-          {% for cidade in cidades %}
+          {% for area in areas %}
           <tr>
-             <td>{{ cidade.nome }}</td>
-             <td>{{ cidade.uf }}</td>
+             <td>{{ area.nome }}</td>
           </tr>
           {% endfor %}
        </tbody>

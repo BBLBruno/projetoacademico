@@ -46,9 +46,6 @@
               <a class="nav-link text-dark" href="/frequencia/">Frequências</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link text-dark" href="/turma/">Turmas</a>
-          </li>
-          <li class="nav-item">
               <a class="nav-link text-dark" href="/ocorrencia/">Ocorrências</a>
           </li>
           </ul>
@@ -71,7 +68,7 @@
        <tbody>
           {% for matricula in matriculas %}
           <tr>
-             <td>{{ matricula.matricula }}</td>
+             <td>{{ matricula.nome }}</td>
              <td>{{ matricula.data_inicio }}</td>
              <td>{{ matricula.data_previsao_termino }}</td>
              <td>{{ matricula.instituicao }}</td>
